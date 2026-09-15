@@ -1,0 +1,7 @@
+{
+  "name": "Image Combiner",
+  "short_name": "Combiner",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff"
+}

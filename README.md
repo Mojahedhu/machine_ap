@@ -34,3 +34,45 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+---
+
+## generation history refactor:
+
+GenerationHistory
+├─ HistoryHeader
+├─ GenerationList
+│ ├─ GenerationThumbnail
+│ │ ├─ LoadingThumbnail
+│ │ ├─ ErrorThumbnail
+│ │ └─ ImageThumbnail
+└─ LoadMoreButton
+
+---
+## Copy Image to Clipboard
+User clicks copy
+        │
+        ▼
+generatedImage exists?
+        │
+        ▼
+convert image → PNG Blob
+        │
+        ▼
+Is mobile?
+   │        │
+   ▼        ▼
+Mobile     Desktop
+   │        │
+Try ClipboardItem
+   │
+Success? ───────► Done
+   │
+   ▼
+Fallback → Base64 copy
+   │
+Success? ───────► Done
+   │
+   ▼
+Show error toast
+
